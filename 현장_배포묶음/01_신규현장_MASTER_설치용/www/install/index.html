@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>설치 · 통합웹빌더</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px;
+    font-family: Pretendard, -apple-system, "Malgun Gothic", sans-serif; background: #f1f5f9; color: #1c2b36; }
+  .box { width: 100%; max-width: 520px; background: #fff; border-radius: 16px; padding: 30px 28px; box-shadow: 0 18px 44px rgba(15, 23, 42, .12); }
+  h1 { margin: 0 0 6px; font-size: 20px; }
+  p { margin: 0 0 14px; font-size: 14px; line-height: 1.7; color: #475569; }
+  ol { margin: 0 0 16px 18px; padding: 0; font-size: 14px; line-height: 1.9; color: #334155; }
+  .btn { display: inline-block; padding: 11px 18px; border-radius: 10px; background: #111827; color: #fff; text-decoration: none; font-weight: 700; font-size: 14px; border: 0; cursor: pointer; }
+  .btn--line { background: #fff; color: #111827; border: 1px solid #cbd5e1; margin-left: 6px; }
+  .state { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 700; padding: 5px 11px; border-radius: 999px; margin-bottom: 12px; }
+  .state--new { background: #eef4ff; color: #2247a8; }
+  .state--done { background: #ecfdf5; color: #0f766e; }
+  .state--err { background: #fff1f2; color: #b42318; }
+  .muted { font-size: 12px; color: #94a3b8; margin-top: 14px; }
+  code { background: #f1f5f9; border-radius: 5px; padding: 1px 5px; font-size: 12px; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="state state--new" id="st">확인 중…</div>
+    <h1 id="ttl">통합웹빌더 설치</h1>
+    <div id="body"><p>서버 상태를 확인하고 있습니다…</p></div>
+    <p class="muted" id="foot"></p>
+  </div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var api = '../api/index.php?r=';
+  function show(kind, title, html, foot) {
+    $('st').className = 'state state--' + kind;
+    $('st').textContent = kind === 'done' ? '설치 완료' : (kind === 'err' ? '확인 필요' : '설치 준비됨');
+    $('ttl').textContent = title;
+    $('body').innerHTML = html;
+    $('foot').textContent = foot || '';
+  }
+  fetch(api + '/setup/status', { headers: { Accept: 'application/json' } })
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      if (j && j.needsSetup) {
+        show('new', '새 현장 설치', '<p>아직 설치되지 않은 서버입니다. 아래 버튼을 눌러 <b>현장명 · 대표번호 · 최고관리자 계정</b>을 만들어 주세요.</p>' +
+          '<ol><li>현장명 · 대표번호 입력</li><li>최고관리자 아이디 · 비밀번호 만들기</li><li>완료되면 관리자 화면으로 들어갑니다</li></ol>' +
+          '<a class="btn" href="../admin/">설치 시작하기</a>',
+          '설치가 끝나면 이 주소(/install/)는 아무 것도 하지 않습니다.');
+        setTimeout(function () { location.replace('../admin/'); }, 1200);   /* 설치 화면(관리자 첫 화면)으로 자동 이동 */
+        return;
+      }
+      show('done', '설치가 완료된 사이트입니다',
+        '<p>이 서버는 이미 설치되어 운영 중입니다. 여기서는 데이터를 다시 만들거나 초기화할 수 없습니다.</p>' +
+        '<a class="btn" href="../admin/">관리자로 이동</a><a class="btn btn--line" href="../">홈페이지 보기</a>',
+        '초기화가 꼭 필요하면 서버의 api/data 폴더를 백업한 뒤 직접 정리해 주세요.');
+    })
+    .catch(function () {
+      show('err', '서버에 연결하지 못했습니다',
+        '<p>API 주소에 연결할 수 없습니다. <code>/www/api/index.php</code> 파일이 올라갔는지, PHP 가 동작하는지 확인해 주세요.</p>' +
+        '<a class="btn" href="./">다시 확인</a><a class="btn btn--line" href="../admin/">관리자 열기</a>', '');
+    });
+})();
+</script>
+</body>
+</html>

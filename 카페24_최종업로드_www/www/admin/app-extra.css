@@ -1,0 +1,77 @@
+/* 통합웹빌더 관리자 — 화면별 스타일 (공통 토큰 · 컴포넌트는 admin.css) : 대시보드 · 사이트 설정 · 통계 · 메뉴 편집 · 게시판 · 예약 · 게시 진행 · SEO · 에디터 컨테이너 */
+.wb-body{min-height:100vh}
+.content h3{margin-bottom:12px}.card h4{margin:0 0 8px}.card h3 + p.help,.card .row + p.help{margin-top:4px}
+
+/* 대시보드 */
+.dash-quick{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:var(--gap)}
+.dash-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);margin-bottom:var(--gap)}
+@media(max-width:1200px){.dash-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.dash-grid{grid-template-columns:minmax(0,1fr)}}
+.stat__bar{height:6px;border-radius:3px;background:#e9edf0;margin-top:10px;overflow:hidden}.stat__bar b{display:block;height:100%;background:var(--pt);border-radius:3px}
+
+/* 사이트 설정 (탭 · 적용 위치 안내 · 브랜드 색 · 미리보기) */
+.set-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:var(--gap);align-items:start}
+@media(max-width:1200px){.set-layout{grid-template-columns:minmax(0,1fr)}}
+.set-side{position:sticky;top:calc(var(--tb-h) + 16px)}
+.set-where{display:block;font-size:11.5px;color:var(--tx-3);margin-top:4px;line-height:1.5}.set-where::before{content:"적용 위치 · ";color:var(--pt);font-weight:600}
+.set-color{display:flex;gap:8px;align-items:center}.set-color input[type=text]{flex:1;min-width:0;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;text-transform:uppercase}
+.set-colors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--gap)}@media(max-width:700px){.set-colors{grid-template-columns:minmax(0,1fr)}}
+.set-range{display:flex;gap:10px;align-items:center}.set-range input[type=range]{flex:1;height:auto;padding:0;border:0;box-shadow:none}.set-range output{flex:none;width:44px;text-align:right;font-size:12.5px;color:var(--tx-2);font-variant-numeric:tabular-nums}
+.brand-prev{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--bp-bg,#fff);color:var(--bp-text,#1c2b36);font-size:13px}
+.brand-prev__hero{position:relative;padding:22px 18px;background:linear-gradient(135deg,var(--bp-primary,#002f47),var(--bp-secondary,#0b4a6b));color:var(--bp-text-light,#fff)}
+.brand-prev__hero::after{content:"";position:absolute;inset:0;background:rgba(var(--bp-overlay-rgb,0,0,0),var(--bp-overlay-op,.28));pointer-events:none}
+.brand-prev__hero > *{position:relative;z-index:1}.brand-prev__hero b{display:block;font-size:16px;margin-bottom:4px}
+.brand-prev__body{padding:16px 18px;display:grid;gap:10px}
+.brand-prev__btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 18px;border:0;border-radius:var(--bp-radius,0);background:var(--bp-button,#002f47);color:var(--bp-button-text,#fff);font-weight:600;font-size:13px;cursor:default}.brand-prev__btn:hover{background:var(--bp-button-hover,#0b4a6b)}
+.brand-prev__link{color:var(--bp-link,#002f47);font-weight:600;text-decoration:underline}.brand-prev__accent{display:inline-block;width:36px;height:3px;background:var(--bp-accent,#b08d57)}
+.brand-prev__tel{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;color:var(--bp-primary,#002f47)}
+.live-frame{width:100%;height:520px;border:1px solid var(--line);border-radius:var(--r-lg);background:#fff}
+.chg-list{list-style:none;margin:8px 0 0;padding:0;border:1px solid var(--line);border-radius:var(--r);font-size:13px}.chg-list li{display:flex;gap:10px;padding:8px 12px;border-top:1px solid var(--line)}.chg-list li:first-child{border-top:0}.chg-list li b{flex:none;min-width:120px}.chg-list li span{color:var(--tx-2);word-break:break-all}.chg-list li s{color:var(--tx-3)}
+
+/* 통계 · 막대 */
+.bars{list-style:none;margin:0;padding:0}.bars li{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,2fr) 60px;gap:8px;align-items:center;font-size:12.5px;padding:5px 0}.bars__label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.bars__bar{height:10px;border-radius:5px;background:#e9edf0;overflow:hidden}.bars__bar i{display:block;height:100%;background:var(--pt);border-radius:5px}.bars__val{text-align:right;font-variant-numeric:tabular-nums;color:var(--tx-2)}
+.chart{display:flex;align-items:flex-end;gap:2px;width:100%;height:180px;border-bottom:1px solid var(--line);padding:0 2px}.chart__col{flex:1;position:relative;height:100%;display:flex;align-items:flex-end;justify-content:center;gap:1px}.chart__col i{display:block;width:60%;background:var(--pt-soft);border-top:2px solid var(--pt)}.chart__col b{display:block;width:30%;background:var(--pt)}
+.legend{display:inline-block;width:10px;height:10px;margin-right:4px;vertical-align:middle}.legend--pv{background:var(--pt-soft);border-top:2px solid var(--pt)}.legend--uv{background:var(--pt)}
+
+/* 메뉴 편집 · 게시판 · 폼 */
+.grid--boards{grid-template-columns:260px minmax(0,1fr)}.grid--forms{grid-template-columns:minmax(0,1fr) 340px}@media(max-width:900px){.grid--boards,.grid--forms{grid-template-columns:minmax(0,1fr)}}
+.menu-group{border:1px solid var(--line);border-radius:var(--r);background:#fff;padding:12px;margin-bottom:8px}.menu-items{margin:8px 0 0 28px}.menu-item{margin-bottom:6px}.menu-item .inp,.menu-item select{height:36px;font-size:13px}.menu-item select{width:auto;max-width:180px}
+.form-preview .fp{margin-bottom:10px}.form-preview .fp--half{display:inline-block;width:calc(50% - 6px);margin-right:8px;vertical-align:top}.form-preview .fp label{display:block;font-size:12px;color:var(--tx-2);margin-bottom:4px}.form-preview .fp em{color:var(--err);font-style:normal}.form-preview .inp{height:36px}
+.editor-area{min-height:220px;border:1px solid var(--line-2);border-radius:var(--r-sm);padding:12px;background:#fff;line-height:1.7;font-size:14px;overflow:auto;max-height:50vh}.editor-area:focus{outline:2px solid var(--pt)}.editor-area img{max-width:100%}
+
+/* 방문예약 목록 : 메모 한 줄 · 번호/일시/연락처 줄바꿈 없음(좁으면 표 안에서 가로 스크롤) · 일괄 처리 막대 */
+.td-memo{max-width:190px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;color:var(--tx-2)}
+.tbl--sub th,.tbl--sub td{white-space:nowrap}
+#bulkBar{flex-wrap:wrap}#bulkBar select{width:auto;min-width:170px;max-width:240px}
+@media(max-width:767px){.tbl--sub .c-chk,.tbl--sub .c-site,.tbl--sub .c-created,.tbl--sub .c-phone,.tbl--sub .c-sms{display:none}.filter input,.filter select{flex:1 1 40%}.filter input[type=date]{width:auto}}
+
+/* 에디터 컨테이너 */
+#editorView{position:fixed;inset:0;z-index:100}#editorView[hidden]{display:none}
+body.is-editor{overflow:hidden}
+
+/* 게시 상태 배지 · 게시 진행 창 · 연결 점검 */
+.tb__pub{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:15px;font-size:12px;font-weight:600;text-decoration:none!important;white-space:nowrap;background:var(--ok-soft);color:#155d38;max-width:300px;overflow:hidden;text-overflow:ellipsis}
+.tb__pub::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.tb__pub.is-warn{background:var(--warn-soft);color:var(--warn)}.tb__pub.is-bad{background:var(--err-soft);color:var(--err)}.tb__pub.is-run{background:var(--pt-soft);color:var(--pt)}.tb__pub.is-run::before{animation:pubPulse 1s ease-in-out infinite}
+@keyframes pubPulse{50%{opacity:.25}}
+.pub-steps{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:2px}
+.pub-steps li{display:flex;align-items:center;gap:10px;padding:7px 4px;font-size:13px;color:var(--tx-3)}
+.pub-steps li i{width:18px;height:18px;border-radius:50%;border:2px solid var(--line-2);flex:none;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:11px;line-height:1}
+.pub-steps li small{margin-left:auto;color:var(--tx-3);font-size:11px;max-width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pub-steps li.is-run{color:var(--pt);font-weight:600}.pub-steps li.is-run i{border-color:var(--pt);border-top-color:transparent;animation:spin .8s linear infinite}
+.pub-steps li.is-ok{color:var(--tx)}.pub-steps li.is-ok i{border-color:var(--ok);background:var(--ok);color:#fff}.pub-steps li.is-ok i::after{content:"✓"}
+.pub-steps li.is-bad{color:var(--err);font-weight:600}.pub-steps li.is-bad i{border-color:var(--err);background:var(--err);color:#fff}.pub-steps li.is-bad i::after{content:"✕"}
+.pub-steps li.is-skip{opacity:.45}.pub-steps li.is-skip i::after{content:"–";color:var(--tx-3)}
+.pub-checks{list-style:none;margin:10px 0 0;padding:0;border:1px solid var(--line);border-radius:var(--r)}
+.pub-checks li{display:flex;gap:8px;align-items:baseline;padding:8px 12px;font-size:12.5px;border-top:1px solid var(--line)}.pub-checks li:first-child{border-top:0}
+.pub-checks li i{font-style:normal;font-weight:700;flex:none;width:14px}.pub-checks li.is-ok i{color:var(--ok)}.pub-checks li.is-bad i{color:var(--err)}.pub-checks li.is-bad{background:#fdf5f4}
+.pub-checks li span{flex:none;font-weight:600;min-width:150px}.pub-checks li small{color:var(--tx-2);word-break:break-all}
+
+/* SEO 검색 결과 미리보기 */
+.seo-snip{border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;background:#fff;font-family:Arial,'Apple SD Gothic Neo','Malgun Gothic',sans-serif}
+.seo-snip__url{font-size:12px;color:#3c4043;word-break:break-all}.seo-snip__title{font-size:18px;line-height:1.35;color:#1a0dab;margin:3px 0}.seo-snip__desc{font-size:13px;line-height:1.55;color:#4d5156}
+.seo-snip__inh{display:inline-block;font:500 10.5px/1 Pretendard,sans-serif;color:var(--tx-3);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:3px 6px;vertical-align:middle}
+.seo-snip__warn{margin-top:8px;font-size:12px;color:var(--warn)}
+.seo-pages>summary{cursor:pointer;font-size:14px;list-style:none;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.seo-pages>summary::before{content:"▸";color:var(--tx-3)}.seo-pages[open]>summary::before{content:"▾"}.seo-pages>summary::-webkit-details-marker{display:none}
+.seo-modes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.seo-mode{display:flex;gap:8px;align-items:flex-start;border:1px solid var(--line-2);border-radius:var(--r);padding:10px;cursor:pointer}.seo-mode:has(input:checked){border-color:var(--pt);background:var(--pt-soft)}.seo-mode small{display:block;color:var(--tx-2);font-size:11.5px;margin-top:2px}
+@media(max-width:720px){.seo-modes{grid-template-columns:1fr}.tb__pub{max-width:120px}}
+@media(max-width:767px){.tb__right .btn{padding:0 10px}.tb__right .btn--ghost{display:none}.card{padding:16px}.stat{padding:14px 16px}.stat__value{font-size:22px}}

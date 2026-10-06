@@ -1,0 +1,219 @@
+{
+ "reserve": {
+  "enabled": true,
+  "eyebrow": "",
+  "title": "",
+  "desc": "",
+  "submitLabel": "방문예약 신청",
+  "sendingLabel": "접수 중...",
+  "doneTitle": "방문예약이 정상적으로 접수되었습니다.",
+  "doneText": "담당자가 확인 후 안내 연락을 드리겠습니다.",
+  "backgroundImage": {
+   "enabled": false,
+   "src": "",
+   "alt": "",
+   "objectFit": "cover",
+   "objectPosition": "center"
+  },
+  "backgroundOpacity": 0.12,
+  "phonePrefix": "010",
+  "visitTimes": [
+   "10:00",
+   "10:30",
+   "11:00",
+   "11:30",
+   "12:00",
+   "12:30",
+   "13:00",
+   "13:30",
+   "14:00",
+   "14:30",
+   "15:00",
+   "15:30",
+   "16:00",
+   "16:30",
+   "17:00",
+   "17:30",
+   "18:00"
+  ],
+  "fields": [
+   {
+    "enabled": true,
+    "name": "name",
+    "label": "성함",
+    "type": "text",
+    "required": true,
+    "placeholder": "성함을 입력해 주세요"
+   },
+   {
+    "enabled": true,
+    "name": "phone",
+    "label": "연락처",
+    "type": "phone",
+    "required": true
+   },
+   {
+    "enabled": true,
+    "name": "date",
+    "label": "방문 날짜",
+    "type": "date",
+    "required": false
+   },
+   {
+    "enabled": true,
+    "name": "time",
+    "label": "방문 시간",
+    "type": "time",
+    "required": false
+   },
+   {
+    "enabled": true,
+    "name": "memo",
+    "label": "문의사항",
+    "type": "textarea",
+    "required": false,
+    "full": true,
+    "placeholder": "궁금하신 내용을 남겨주세요"
+   }
+  ],
+  "agreements": [
+   {
+    "enabled": true,
+    "name": "agreePrivacy",
+    "label": "[필수] 개인정보 수집, 이용, 위탁, 양도에 동의합니다.",
+    "required": true,
+    "toggleLabel": "내용보기",
+    "terms": "■ 개인정보 수집, 이용, 위탁, 양도 동의\n㈜핏톡는 고객님의 원활한 서비스 이용을 위해 필요한 최소한의 개인정보를 수집하고 있습니다.\n* 개인정보 제공받는 자 : ㈜핏톡\n* 직방, 호갱노노는 고객님의 개인정보를 수집하거나 분양상담에 직접 관여하지 않습니다. 제공되는 부동산 정보는 각 콘텐츠 제공업체로부터 받는 정보로 참고용입니다. 정보의 정확성이나 신뢰성을 보증하지 않으며, 서비스 이용의 결과에 대해서 어떠한 법적인 책임을 지지 않습니다.\n* 고객님은 개인정보 수집에 동의하지 않을 권리가 있습니다. 다만, 필수 항목에 대한 동의를 거부하실 경우 관심고객 등록이 불가능합니다.\n1. 수집하는 개인정보 항목\n관심고객 등록을 통해 다음과 같은 개인정보를 수집합니다.\n* 개인정보 제공 필수 항목 : 이름, 휴대전화번호\n* 개인정보 제공 선택 항목 : 주소 (시/도, 시/군/구), 관심 타입, 연령대\n2. 개인정보의 수집 및 이용 목적\n수집된 개인정보는 다음의 목적으로 이용됩니다.\n* 이름, 휴대전화번호 : 분양 정보 안내, 상담, 고지사항 전달, 불만 처리, 이벤트 정보 제공\n* 관심 타입: 맞춤형 정보 제공\n* 연령대: 통계 분석 및 맞춤형 서비스 제공\n3. 개인정보의 보유 및 이용 기간\n수집된 개인정보는 원칙적으로 관심고객 등록 시점부터 분양 완료 시까지 보유 및 이용합니다. 단, 마케팅 활용 동의 시에는 별도의 보유 기간을 따릅니다.\n* 파기 절차: 분양 완료 후 별도 DB로 이관하여 일정 기간 보관 후 파기\n* 파기 방법: 전자적 파일 형태의 정보는 복구 불가능한 기술적 방법을 사용하여 영구 삭제하며, 종이 문서 형태의 정보는 분쇄하거나 소각합니다."
+   }
+  ]
+ },
+ "site": {
+  "name": "",
+  "tel": "",
+  "url": "",
+  "address": "",
+  "company": "",
+  "logo": {}
+ },
+ "theme": {
+  "fonts": {
+   "display": "\"Cormorant Garamond\",\"Times New Roman\",Times,Georgia,serif",
+   "body": "\"Pretendard\",\"Apple SD Gothic Neo\",\"Malgun Gothic\",\"맑은 고딕\",-apple-system,BlinkMacSystemFont,sans-serif"
+  },
+  "colors": {
+   "--brand-primary": "#002F47",
+   "--brand-primary-dark": "#001F30",
+   "--brand-primary-light": "#0B5274",
+   "--brand-primary-soft": "#E8F0F3",
+   "--brand-accent": "#B79A6B",
+   "--brand-bg": "#F7F6F2",
+   "--color-background-soft": "#EEF1F1",
+   "--color-surface": "#FFFFFF",
+   "--brand-text": "#17252C",
+   "--brand-secondary": "#748188",
+   "--color-border": "rgba(0,47,71,.16)",
+   "--color-header-overlay-text": "#FFFFFF",
+   "--color-header-solid-bg": "rgba(255,255,255,.97)",
+   "--color-quick-bg": "#FFFFFF",
+   "--color-quick-text": "var(--brand-primary)"
+  },
+  "typography": {
+   "--fs-section-title": "clamp(26px,3.2vw,44px)",
+   "--fw-section-title": "600",
+   "--fs-summary-latin": "clamp(46px,5vw,88px)",
+   "--fs-premium-title": "clamp(16px,1.5vw,23px)",
+   "--fs-env-title": "clamp(21px,2.2vw,30px)",
+   "--fs-type-name": "clamp(22px,2.2vw,32px)",
+   "--fs-gnb": "16px",
+   "--fw-gnb": "500",
+   "--lh-base": "1.75"
+  },
+  "layout": {
+   "--header-height": "92px",
+   "--header-height-mobile": "76px",
+   "--content-width": "1440px",
+   "--seq-scenes": "2.4",
+   "--line-rotate-speed": ".5s"
+  }
+ },
+ "subpage": {
+  "showTabs": true,
+  "homeLabel": "HOME",
+  "prevLabel": "PREV",
+  "nextLabel": "NEXT",
+  "ctaTitle": "견본주택 방문을 예약하세요",
+  "ctaText": "방문예약 후 전문 상담사의 안내를 받으실 수 있습니다.",
+  "ctaButton": "방문예약 하기",
+  "ctaUrl": "#visit-reservation",
+  "notFound": {
+   "category": "NOT FOUND",
+   "title": "페이지를 찾을 수 없습니다",
+   "description": "주소가 변경되었거나 존재하지 않는 페이지입니다. 아래 메뉴에서 원하시는 내용을 선택해 주세요.",
+   "media": {
+    "enabled": false
+   }
+  }
+ },
+ "popupOptions": {
+  "autoOpen": true,
+  "bannerWidth": "350px",
+  "aspectRatio": "350 / 470",
+  "itemGap": "14px",
+  "objectFit": "cover",
+  "objectPosition": "center",
+  "quickGap": "24px",
+  "screenGap": "20px",
+  "mobileWidth": "min(76vw, 300px)",
+  "autoplayInterval": 4200,
+  "slideDuration": 600,
+  "resumeDelay": 5000
+ },
+ "footer": {
+  "enabled": true,
+  "phoneLabel": "상담 문의",
+  "notices": [],
+  "company": "",
+  "address": "",
+  "links": [],
+  "logo": ""
+ },
+ "quickMenuTitle": "QUICK MENU",
+ "quickMenu": [
+  {
+   "enabled": true,
+   "label": "홈",
+   "icon": "home",
+   "type": "section",
+   "targetId": "hero"
+  },
+  {
+   "enabled": true,
+   "label": "방문예약",
+   "icon": "mail",
+   "type": "section",
+   "targetId": "visit-reservation"
+  }
+ ],
+ "menu": [],
+ "sections": [],
+ "pages": {},
+ "blocks": {},
+ "attrs": {},
+ "pageCommon": {},
+ "popupBanners": [],
+ "videoPopups": [],
+ "seo": {
+  "site": {
+   "title": "",
+   "description": "",
+   "keywords": "",
+   "robots": "index,follow",
+   "og": {
+    "title": "",
+    "description": "",
+    "image": ""
+   }
+  },
+  "pages": {}
+ }
+}

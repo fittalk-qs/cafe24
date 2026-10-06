@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>목동윤슬자이 | 분양 홈페이지</title>
+<meta name="description" content="목동윤슬자이 분양 안내 - 사업개요, 프리미엄, 입지환경, 세대안내, 방문예약">
+<!-- 공유 대표이미지 (SEO · 카카오톡 · 네이버 · SNS) : 1100×750 · 절대 URL + 버전값(?v=) 으로 캐시 갱신 · 실제 도메인으로 교체 (site-data.js site.url 과 동일하게) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="목동윤슬자이">
+<meta property="og:title" content="목동윤슬자이 | 분양 홈페이지">
+<meta property="og:description" content="목동윤슬자이 분양 안내 - 사업개요, 프리미엄, 입지환경, 세대안내, 방문예약">
+<meta property="og:image" content="./assets/images/og-image.jpg?v=20260916">
+<meta property="og:image:secure_url" content="./assets/images/og-image.jpg?v=20260916">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1100">
+<meta property="og:image:height" content="750">
+<meta property="og:image:alt" content="목동윤슬자이 조감도">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="목동윤슬자이 | 분양 홈페이지">
+<meta name="twitter:description" content="목동윤슬자이 분양 안내 - 사업개요, 프리미엄, 입지환경, 세대안내, 방문예약">
+<meta name="twitter:image" content="./assets/images/og-image.jpg?v=20260916">
+
+<!-- 폰트 : 웹폰트를 쓰시려면 아래 주석을 해제하세요.
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+-->
+
+<link rel="icon" type="image/png" href="./assets/images/favicon.png?v=2">
+<link rel="apple-touch-icon" href="./assets/images/favicon.png?v=2">
+<!-- 모바일 메인 프리미엄 섹션 전용 웹폰트 (참고 사이트와 같은 계열 : 본문 Noto Sans KR 400 · 라틴 대문자 Cinzel 600) — 767px 이하 #premium 안에서만 사용, 다른 영역은 Pretendard 유지 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+KR:wght@400&display=swap" rel="stylesheet">
+<!-- 메인 슬라이드 1번만 미리 로딩 (site-data.js mainSlider.slides[0] 의 webp · webp1280 · mobileWebp 와 같은 경로를 유지하세요) — PC : webp 1280/1920 srcset · 모바일 : webp -->
+<link rel="preload" as="image" type="image/webp" href="./assets/images/main-slider/slide-01-pc.webp" imagesrcset="./assets/images/main-slider/slide-01-pc-1280.webp 1280w, ./assets/images/main-slider/slide-01-pc.webp 1920w" imagesizes="100vw" media="(min-width: 768px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="./assets/images/main-slider/slide-01-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- 데이터 → 공통 기능 → 페이지 스크립트 순서로 불러옵니다. -->
+<script src="assets/js/site-data.js" defer></script>
+<script src="assets/js/cms-config.js" defer></script>
+<script src="assets/js/cms.js" defer></script>
+<noscript><!-- 관리자(CMS) 미연결 시에도 동작 : cms.js 가 common.js · main.js 를 로드합니다 --></noscript>
+</head>
+<body data-page="index">
+
+<!-- 공통 헤더 · 모바일 메뉴가 이 위치에 생성됩니다. -->
+<div id="siteHeader"></div>
+
+<!-- 메인 섹션 (SITE_DATA.sections 순서대로 생성) -->
+<main id="sections"></main>
+
+<!-- 공통 푸터가 이 위치에 생성됩니다. -->
+<div id="siteFooter"></div>
+
+<!-- 좌측 팝업 · 우측 퀵메뉴 · 모달 · 상단 이동 버튼은 common.js 가 body 에 추가합니다. -->
+</body>
+</html>
